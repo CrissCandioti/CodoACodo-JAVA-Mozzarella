@@ -1,0 +1,145 @@
+/* Estilos para el cuerpo de la página */
+body {
+  font-family: "Tilt Neon"; /* Define la fuente utilizada para el texto del cuerpo */
+  background-image: url(../img/Home.jpg); /* Establece una imagen de fondo */
+  background-size: cover; /* Ajusta el tamaño de la imagen para cubrir todo el cuerpo */
+  background-attachment: fixed; /* Fija la imagen de fondo en su posición */
+  background-position: center; /* Centra la imagen de fondo horizontal y verticalmente */
+}
+
+/* Cambia de imagen en pantallas más pequeñas */
+@media (max-width: 768px) {
+  body {
+    background-image: url(../img/Home-Mobile.jpg);
+  }
+}
+
+/* Estilos para la barra de navegación */
+.navbar {
+  background-color: #fff; /* Color de fondo de la barra de navegación */
+  height: 80px; /* Altura de la barra de navegación */
+  margin: 20px; /* Márgenes alrededor de la barra de navegación */
+  border-radius: 16px; /* Esquinas redondeadas de la barra de navegación */
+  padding: 0.5rem; /* Relleno interno dentro de la barra de navegación */
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px; /* Aquí aplicamos la sombra */
+}
+
+/* Estilos para el elemento dentro de la barra de navegación que actúa como marca o logotipo */
+.navbar-brand {
+  font-weight: 500; /* Grosor de la fuente */
+  color: #262626; /* Color del texto */
+  font-size: 24px; /* Tamaño de la fuente */
+  transition: 0.3s color; /* Transición suave de color durante 0.3 segundos */
+}
+
+/* Estilos para el botón de inicio de sesión */
+.login-button {
+  background-color: #262626; /* Color de fondo del botón */
+  color: #fff; /* Color del texto */
+  font-size: 14px; /* Tamaño de la fuente */
+  padding: 8px 20px; /* Relleno interno del botón */
+  border-radius: 50px; /* Bordes redondeados del botón */
+  text-decoration: none; /* Elimina la decoración de texto (subrayado) */
+  transition: 0.3s background-color; /* Transición suave de color de fondo durante 0.3 segundos */
+}
+
+/* Estilos al pasar el cursor sobre el botón de inicio de sesión */
+.login-button:hover {
+  background-color: #888888; /* Nuevo color de fondo al pasar el cursor */
+}
+
+/* Estilos para el botón de alternar la barra de navegación en pantallas pequeñas */
+.navbar-toggler {
+  border: none; /* Elimina el borde del botón */
+  font-size: 1.25rem; /* Tamaño de la fuente del botón */
+}
+
+/* Estilos al enfocar el botón de alternar la barra de navegación */
+.navbar-toggler:focus,
+.btn-close:focus {
+  box-shadow: none; /* Elimina la sombra al enfocar */
+  outline: none; /* Elimina el contorno al enfocar */
+}
+
+/* Estilos para los enlaces de navegación */
+.nav-link {
+  color: #262626; /* Color del texto */
+  font-weight: 500; /* Grosor de la fuente */
+  position: relative; /* Posición relativa para elementos secundarios */
+}
+
+/* Estilos al pasar el cursor sobre los enlaces de navegación o cuando están activos */
+.nav-link:hover,
+.nav-link.active {
+  color: #000; /* Nuevo color de texto al pasar el cursor o cuando está activo */
+}
+
+/* Estilos específicos para pantallas grandes (min-width: 991px) */
+@media (min-width: 991px) {
+  /* Efecto de línea debajo de los enlaces de navegación al pasar el cursor o cuando están activos */
+  .nav-link::before {
+    content: ""; /* Contenido generado antes del texto */
+    position: absolute; /* Posición absoluta con respecto al elemento padre */
+    bottom: 0; /* Alineación en la parte inferior del enlace */
+    left: 50%; /* Alineación en el centro horizontal */
+    transform: translateX(-50%); /* Centra horizontalmente */
+    width: 0; /* Ancho inicial de la línea */
+    height: 2px; /* Altura de la línea */
+    background-color: #262626; /* Color de la línea */
+    visibility: hidden; /* Oculta inicialmente la línea */
+    transition: 0.3s ease-in-out; /* Transición suave */
+  }
+
+  /* Mostrar la línea debajo del enlace al pasar el cursor o cuando está activo */
+  .nav-link:hover::before,
+  .nav-link.active::before {
+    width: 100%; /* Ancho completo al pasar el cursor o cuando está activo */
+    visibility: visible; /* Hace visible la línea */
+  }
+
+  /* Estilos para los elementos de menú desplegable en pantallas grandes */
+  .dropdown-item {
+    position: relative; /* Posición relativa */
+  }
+
+  /* Efecto de línea debajo de los elementos de menú desplegable al pasar el cursor */
+  .dropdown-item::before {
+    content: ""; /* Contenido generado antes del texto */
+    position: absolute; /* Posición absoluta con respecto al elemento padre */
+    bottom: 0; /* Alineación en la parte inferior */
+    left: 50%; /* Alineación en el centro horizontal */
+    transform: translateX(-50%); /* Centra horizontalmente */
+    width: 0; /* Ancho inicial de la línea */
+    height: 2px; /* Altura de la línea */
+    background-color: #262626; /* Color de la línea */
+    visibility: hidden; /* Oculta inicialmente la línea */
+    transition: width 0.3s ease-in-out; /* Transición suave del ancho */
+  }
+
+  /* Mostrar la línea debajo del elemento de menú desplegable al pasar el cursor */
+  .dropdown-item:hover::before {
+    visibility: visible; /* Hace visible la línea */
+    width: 100%; /* Ancho completo al pasar el cursor */
+  }
+}
+
+/* Estilos para el menú desplegable */
+.dropdown-menu {
+  border: none; /* Elimina el borde del menú desplegable */
+}
+
+/* Estilos para los elementos de la lista dentro del menú desplegable */
+.dropdown-menu > li {
+  border: none; /* Elimina el borde de los elementos de lista */
+}
+
+/* Estilo para el enlace activo (seleccionado) en el menu desplegable de comida*/
+.dropdown-menu .dropdown-item:active,
+.dropdown-menu .dropdown-item:focus {
+  background-color: #262626; /* Color de fondo deseado */
+  color: white; /* Color del texto */
+}
+
+.mt-custom {
+  margin-top: 150px;
+}

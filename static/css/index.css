@@ -143,3 +143,29 @@ body {
 .mt-custom {
   margin-top: 150px;
 }
+
+/* Estilos para el botón de inicio de sesión */
+.cart {
+  background-color: #262626; /* Color de fondo del botón */
+  color: #fff; /* Color del texto */
+  font-size: 14px; /* Tamaño de la fuente */
+  padding: 8px 20px; /* Relleno interno del botón */
+  border-radius: 50px; /* Bordes redondeados del botón */
+  text-decoration: none; /* Elimina la decoración de texto (subrayado) */
+  transition: 0.3s background-color; /* Transición suave de color de fondo durante 0.3 segundos */
+}
+
+/* Estilos al pasar el cursor sobre el botón de inicio de sesión */
+.cart:hover {
+  background-color: #888888; /* Nuevo color de fondo al pasar el cursor */
+}
+
+img {
+  border-radius: 20px;
+}
+
+.card-header,
+.card-body,
+.card-footer {
+  background: #fff;
+}

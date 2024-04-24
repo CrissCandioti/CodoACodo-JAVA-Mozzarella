@@ -144,14 +144,6 @@ body {
   margin-top: 110px;
 }
 
-.carousel-inner {
-  border-radius: 20px;
-}
-
-.carousel-item {
-  max-height: 400px;
-}
-
 .card {
   text-align: center;
   height: 250px;

@@ -72,11 +72,15 @@
     </header>
 
     <!--Main-->
-    <div class="container mt-custom min-vh-100" data-aos="fade-up">
-      <!--Carousel Promociones-->
+    <div class="container mt-custom min-vh-100">
+      <!--Titulo Promocional-->
       <div class="row">
-        <h1 class="text-light">Promociones del dia</h1>
-        <div id="carouselExampleCaptions" class="carousel slide mt-3">
+        <h1 class="text-light mt-5">Promociones del dia</h1>
+      </div>
+      <!--Titulo Promocional-->
+      <!--Carousel de promociones-->
+      <div class="row">
+        <div id="carouselExampleCaptions" class="carousel slide">
           <div class="carousel-indicators">
             <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
             <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -85,7 +89,7 @@
           <div class="carousel-inner">
             <div class="carousel-item active">
               <img src="./static/img/Promo.jpg" class="d-block w-100" alt="..." />
-              <div class="carousel-caption d-block">
+              <div class="carousel-caption d-md-block">
                 <h5>Especial de pizza</h5>
                 <p>Llevando 2 especiales de peperoni tenes un 20% de descuento</p>
                 <small>Presiona <a href="#">aqui</a> para agregar al carro de compras</small>
@@ -93,7 +97,7 @@
             </div>
             <div class="carousel-item">
               <img src="./static/img/Promo.jpg" class="d-block w-100" alt="..." />
-              <div class="carousel-caption d-block">
+              <div class="carousel-caption d-md-block">
                 <h5>Especial de pizza</h5>
                 <p>Llevando 2 especiales de peperoni tenes un 20% de descuento</p>
                 <small>Presiona <a href="#">aqui</a> para agregar al carro de compras</small>
@@ -101,7 +105,7 @@
             </div>
             <div class="carousel-item">
               <img src="./static/img/Promo.jpg" class="d-block w-100" alt="..." />
-              <div class="carousel-caption d-block">
+              <div class="carousel-caption d-md-block">
                 <h5>Especial de pizza</h5>
                 <p>Llevando 2 especiales de peperoni tenes un 20% de descuento</p>
                 <small>Presiona <a href="#">aqui</a> para agregar al carro de compras</small>
@@ -118,66 +122,75 @@
           </button>
         </div>
       </div>
-      <!--Carousel Promociones-->
-      <!--Tarjetas-->
-      <div class="row mt-5">
-        <div class="col-sm-12 col-md-6 col-lg-4" data-aos="fade-right">
+      <!--Carousel de promociones-->
+      <!--Titulo Novedades-->
+      <div class="row">
+        <h1 class="text-light mt-5">Novedades</h1>
+      </div>
+      <!--Titulo Novedades-->
+      <!--Novedades-->
+      <div class="row">
+        <div class="col-sm-12 col-md-6 col-lg-4">
           <div class="card" style="width: 18rem">
-            <img src="./static/img/Home-IMG1.jpg" class="card-img-top" style="max-height: 150px" alt="Imagen Promocional" />
+            <img src="./static/img/Home-IMG1.jpg" class="card-img-top" alt="..." />
             <div class="card-body">
               <p class="card-text">Proba nuestra nueva Pizza Barbacoa</p>
             </div>
           </div>
         </div>
-        <div class="col-sm-12 col-md-6 col-lg-4" data-aos="fade-down">
+        <div class="col-sm-12 col-md-6 col-lg-4">
           <div class="card" style="width: 18rem">
-            <img src="./static/img/Home-IMG2.jpg" class="card-img-top" style="max-height: 150px" alt="Imagen Promocional" />
+            <img src="./static/img/Home-IMG2.jpg" class="card-img-top" alt="..." />
             <div class="card-body">
               <p class="card-text">¿Conoces todos nuestros sabores?</p>
             </div>
           </div>
         </div>
-        <div class="col-sm-12 col-md-6 col-lg-4" data-aos="fade-left">
+        <div class="col-sm-12 col-md-6 col-lg-4">
           <div class="card" style="width: 18rem">
-            <img src="./static/img/Home-IMG3.jpg" class="card-img-top" style="max-height: 150px" alt="Imagen Promocional" />
+            <img src="./static/img/Home-IMG3.jpg" class="card-img-top" alt="..." />
             <div class="card-body">
               <p class="card-text">Hace tu pedido y disfruta de la mejor gastronomia</p>
             </div>
           </div>
         </div>
       </div>
-      <!--Tarjetas-->
-      <h1 class="text-light mt-5">Elegí tus pizzas</h1>
-      <!--Mas Seleccionadas Pizza-->
-      <div class="row mt-1">
-        <div class="col-sm-12 col-md-6 col-lg-4" data-aos="fade-right">
-          <div class="card-Promocion" style="width: 18rem">
-            <img src="./static/img/Pizza-Card Responsive.png" class="car-imagen" style="max-height: 150px" alt="Imagen Promocional" />
-            <div class="card-cuerpo">
-              <h5 class="card-title text-center">Pizza Pepperoni</h5>
+      <!--Novedades-->
+      <!--Titulo Catalogo Pizza-->
+      <div class="row">
+        <h1 class="text-light mt-5">Conoce nuestras pizzas</h1>
+      </div>
+      <!--Titulo Catalogo Pizza-->
+      <!--Card Responsive de pizza-->
+      <div class="row">
+        <div class="col-sm-12 col-md-6 col-lg-4">
+          <div class="card" style="width: 18rem">
+            <img src="./static/img/Pizza-Card Responsive.png" class="card-img-top" alt="Imagen Pizza" />
+            <div class="card-body">
+              <h5 class="card-title text-center">Pizza Cuatro Quesos</h5>
               <ul>
-                <li>Ingredientes: Salsa de tomate, mozzarella, pepperoni (salami picante).</li>
-                <li>Descripción: Una pizza abundante con capas de queso derretido y pepperoni crujiente.</li>
+                <li>Ingredientes: Salsa de tomate, mozzarella, queso azul, queso de cabra, parmesano.</li>
+                <li>Descripción: Una explosión de quesos diversos en cada bocado, perfecta para los amantes del queso.</li>
               </ul>
             </div>
           </div>
         </div>
-        <div class="col-sm-12 col-md-6 col-lg-4" data-aos="fade-down">
-          <div class="card-Promocion" style="width: 18rem">
-            <img src="./static/img/Pizza-Card Responsive.png" class="car-imagen" style="max-height: 150px" alt="Imagen Promocional" />
-            <div class="card-cuerpo">
-              <h5 class="card-title text-center">Pizza Hawaiana</h5>
+        <div class="col-sm-12 col-md-6 col-lg-4">
+          <div class="card" style="width: 18rem">
+            <img src="./static/img/Pizza-Card Responsive.png" class="card-img-top" alt="Imagen Pizza" />
+            <div class="card-body">
+              <h5 class="card-title text-center">Pizza Cuatro Quesos</h5>
               <ul>
-                <li>Ingredientes: Salsa de tomate, mozzarella, jamón, piña.</li>
-                <li>Descripción: Una combinación tropical de sabores salados y dulces que te transporta a la playa.</li>
+                <li>Ingredientes: Salsa de tomate, mozzarella, queso azul, queso de cabra, parmesano.</li>
+                <li>Descripción: Una explosión de quesos diversos en cada bocado, perfecta para los amantes del queso.</li>
               </ul>
             </div>
           </div>
         </div>
-        <div class="col-sm-12 col-md-6 col-lg-4" data-aos="fade-left">
-          <div class="card-Promocion" style="width: 18rem">
-            <img src="./static/img/Pizza-Card Responsive.png" class="car-imagen" style="max-height: 150px" alt="Imagen Promocional" />
-            <div class="card-cuerpo">
+        <div class="col-sm-12 col-md-6 col-lg-4">
+          <div class="card" style="width: 18rem">
+            <img src="./static/img/Pizza-Card Responsive.png" class="card-img-top" alt="Imagen Pizza" />
+            <div class="card-body">
               <h5 class="card-title text-center">Pizza Cuatro Quesos</h5>
               <ul>
                 <li>Ingredientes: Salsa de tomate, mozzarella, queso azul, queso de cabra, parmesano.</li>
@@ -187,115 +200,7 @@
           </div>
         </div>
       </div>
-      <!--Mas Seleccionadas Pizza-->
-      <h1 class="text-light mt-5">Elegí tus empanadas</h1>
-      <!--Mas Seleccionadas Empanadas-->
-      <div class="row mt-1">
-        <div class="col-sm-12 col-md-6 col-lg-4" data-aos="fade-right">
-          <div class="card card-Promocion" style="width: 18rem">
-            <img src="./static/img/Empanada-Card Responsive.png" class="card-img-top car-imagen" style="max-height: 150px" alt="Imagen Promocional" />
-            <div class="card-body card-cuerpo">
-              <h5 class="card-title text-center">Empanada de Carne Argentina</h5>
-              <ul>
-                <li>Ingredientes: Carne de res picada, cebolla, huevo duro, aceitunas verdes, comino, pimiento rojo, masa para empanadas.</li>
-                <li>Descripción: Una empanada clásica argentina rellena de sabrosa carne picada sazonada con especias y acompañada de aceitunas y huevo duro.</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-12 col-md-6 col-lg-4" data-aos="fade-down">
-          <div class="card card-Promocion" style="width: 18rem">
-            <img src="./static/img/Empanada-Card Responsive.png" class="card-img-top car-imagen" style="max-height: 150px" alt="Imagen Promocional" />
-            <div class="card-body card-cuerpo">
-              <h5 class="card-title text-center">Empanada Chilena de Pino</h5>
-              <ul>
-                <li>Ingredientes: Carne molida, cebolla, huevo cocido, pasas, aceitunas negras, comino, pimiento, masa para empanadas.</li>
-                <li>Descripción: Una empanada chilena tradicional rellena de carne sazonada con comino, cebolla, huevo cocido, pasas y aceitunas.</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-12 col-md-6 col-lg-4" data-aos="fade-left">
-          <div class="card card-Promocion" style="width: 18rem">
-            <img src="./static/img/Empanada-Card Responsive.png" class="card-img-top car-imagen" style="max-height: 150px" alt="Imagen Promocional" />
-            <div class="card-body card-cuerpo">
-              <h5 class="card-title text-center">Empanada de Pollo Colombiana</h5>
-              <ul>
-                <li>Ingredientes: Pollo desmenuzado, papa, cebolla, ají, comino, cilantro, masa para empanadas.</li>
-                <li>Descripción: Una empanada colombiana rellena de pollo jugoso con papas, cebolla y cilantro, con un toque de ají.</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!--Mas Seleccionadas Empanadas-->
-      <!--Carousel de comentarios-->
-      <h1 class="text-light mt-5">Comentarios de nuestros clientes</h1>
-      <div id="carouselExample" class="carousel slide mt-5">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <div class="cards-wrapper">
-              <div class="card">
-                <div class="card-header">Quote</div>
-                <div class="card-body">
-                  <blockquote class="blockquote mb-0">
-                    <p>A well-known quote, contained in a blockquote element.</p>
-                    <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
-                  </blockquote>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="cards-wrapper">
-              <div class="card">
-                <div class="card-header">Quote</div>
-                <div class="card-body">
-                  <blockquote class="blockquote mb-0">
-                    <p>A well-known quote, contained in a blockquote element.</p>
-                    <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
-                  </blockquote>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="cards-wrapper">
-              <div class="card">
-                <div class="card-header">Quote</div>
-                <div class="card-body">
-                  <blockquote class="blockquote mb-0">
-                    <p>A well-known quote, contained in a blockquote element.</p>
-                    <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
-                  </blockquote>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="cards-wrapper">
-              <div class="card">
-                <div class="card-header">Quote</div>
-                <div class="card-body">
-                  <blockquote class="blockquote mb-0">
-                    <p>A well-known quote, contained in a blockquote element.</p>
-                    <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
-                  </blockquote>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-      </div>
-      <!--Carousel de comentarios-->
+      <!--Card Responsive de pizza-->
     </div>
     <!--Main-->
 

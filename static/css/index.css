@@ -178,11 +178,18 @@ body {
   border-radius: 50px; /* Bordes redondeados del botón */
   text-decoration: none; /* Elimina la decoración de texto (subrayado) */
   transition: 0.3s background-color; /* Transición suave de color de fondo durante 0.3 segundos */
-  margin-right: 75px;/*Margen derecho ubicacion*/
-  margin-top: 20px;/*Margen superior ubicacion*/
+  margin-right: 75px; /*Margen derecho ubicacion*/
+  margin-top: 20px; /*Margen superior ubicacion*/
 }
 
 /* Estilos al pasar el cursor sobre el botón ver mas */
 .btn:hover {
   background-color: #888888; /* Nuevo color de fondo al pasar el cursor */
+}
+
+/* Realiza un espacio para pantallas mas pequeñas */
+@media (max-width: 991px) {
+  .card {
+    margin-top: 20px;
+  }
 }

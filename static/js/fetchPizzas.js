@@ -62,7 +62,5 @@ function cargarPizzas() {
     });
 }
 
-// Escuchar el evento DOMContentLoaded para cargar las pizzas cuando la página esté lista
-document.addEventListener("DOMContentLoaded", function () {
-  cargarPizzas();
-});
+//Llamamos a nuestra funcion
+cargarPizzas();

@@ -8,7 +8,7 @@ const opcion = {
 };
 
 // Función para crear una tarjeta de pizza
-function crearTarjetaPizza(pizza) {
+function crearTarjetaPizza(pizza, index) {
   return `
     <div class="col-sm-12 col-md-6 col-lg-4 mt-5">
       <div class="col mt-2">
@@ -22,7 +22,7 @@ function crearTarjetaPizza(pizza) {
             </ul>
             <div class="d-flex justify-content-around mt-3">
               <small class="mt-2 ps-3">Costo: $${pizza.price}</small>
-              <button type="button" class="btn"><i class="bi bi-cart2"></i></button>
+              <button type="button" class="btn add-to-cart" data-id="${index}"><i class="bi bi-cart2"></i></button>
             </div>
           </div>
         </div>
@@ -44,8 +44,9 @@ function cargarPizzas() {
       const pizzaContainer = document.getElementById("pizza-container");
 
       // Convertimos los personajes en datos de pizzas simuladas
-      const pizzas = data.results.map(function (character) {
+      const pizzas = data.results.map(function (character, index) {
         return {
+          id: index,
           nombre: character.name,
           imagen: character.image,
           ingredientes: "Ingredientes",
@@ -56,11 +57,27 @@ function cargarPizzas() {
 
       // Renderizamos las tarjetas de pizzas en el DOM
       pizzaContainer.innerHTML = pizzas.map(crearTarjetaPizza).join("");
+
+      // Agregar event listeners a los botones de carrito
+      document.querySelectorAll(".add-to-cart").forEach(button => {
+        button.addEventListener("click", function() {
+          const pizzaId = this.getAttribute("data-id");
+          agregarAlCarrito(pizzas[pizzaId]);
+        });
+      });
     })
     .catch(function (error) {
       console.error("Error al cargar las pizzas:", error);
     });
 }
 
-//Llamamos a nuestra funcion
+// Función para agregar una pizza al carrito
+function agregarAlCarrito(pizza) {
+  let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+  carrito.push(pizza);
+  localStorage.setItem("carrito", JSON.stringify(carrito));
+  alert(`Pizza ${pizza.nombre} añadida al carrito!`);
+}
+
+// Llamamos a nuestra funcion
 cargarPizzas();

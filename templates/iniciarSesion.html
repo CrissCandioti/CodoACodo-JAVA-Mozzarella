@@ -73,7 +73,7 @@
 
     <!--Main-->
 
-    <form action="" method="post" enctype="multipart/form-data">
+    <form id="loginForm" action="" method="post" enctype="multipart/form-data">
       <div class="container mt-custom d-flex justify-content-center align-items-center min-vh-100" data-aos="fade-up">
         <!----------------------- Box -------------------------->
         <div class="row border rounded-5 p-3 bg-white shadow box-area">
@@ -110,10 +110,10 @@
                 </div>
               </div>
               <div class="input-group mb-3">
-                <button class="btn btn-lg text-white w-100 fs-6 boton">Iniciar secion</button>
+                <button type="submit" class="btn btn-lg text-white w-100 fs-6 boton">Iniciar sesion</button>
               </div>
               <div class="input-group mb-3">
-                <a href="https://accounts.google.com/v3/signin/identifier?hl=es&ifkv=ARZ0qKId-A4u7ypdKEgl8Ej2NF7VAn8kOnyUnkfVJhxoxHXH1dJ0wv1HqvGuEokxEt414HERcaNk&flowName=GlifWebSignIn&flowEntry=ServiceLogin&dsh=S-33132203%3A1712874964152181&theme=mn&ddm=0" target="_blank" type="button" class="btn btn-lg btn-light w-100 fs-6"><i class="bi bi-google"></i><small>  Inicia secion con Google</small></a>
+                <a href="https://accounts.google.com/v3/signin/identifier?hl=es&ifkv=ARZ0qKId-A4u7ypdKEgl8Ej2NF7VAn8kOnyUnkfVJhxoxHXH1dJ0wv1HqvGuEokxEt414HERcaNk&flowName=GlifWebSignIn&flowEntry=ServiceLogin&dsh=S-33132203%3A1712874964152181&theme=mn&ddm=0" target="_blank" type="button" class="btn btn-lg btn-light w-100 fs-6"><i class="bi bi-google"></i><small>  Inicia sesion con Google</small></a>
               </div>
               <div class="row">
                 <small>No tienes una cuenta? <a href="./iniciarSesion/CrearCuenta.html" class="option">Crear cuenta</a></small>
@@ -153,5 +153,6 @@
       AOS.init();
     </script>
     <!--AOS page efect-->
+    <script src="../static/js/login.js"></script>
   </body>
 </html>

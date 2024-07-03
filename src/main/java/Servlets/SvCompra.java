@@ -40,7 +40,7 @@ public class SvCompra extends HttpServlet {
             if (pathInfo == null || pathInfo.equals("/")) {
                 List<Compra> listaCompra = compraDAO.listaCompras();
                 Map<String, Object> responseMap = new HashMap<>();
-                responseMap.put("cliente", listaCompra);
+                responseMap.put("compra", listaCompra);
                 String json = objectMapper.writeValueAsString(responseMap);
                 response.setContentType("application/json");
                 response.getWriter().write(json);

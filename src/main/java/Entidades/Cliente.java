@@ -26,7 +26,7 @@ public class Cliente {
     @Column(unique = true)
     private String correoElectronico;
     private String contrasena;
-    @Column(length = 1000, unique = true)
+    @Column(length = 1000)
     private String comengarios;
 
     public Cliente() {

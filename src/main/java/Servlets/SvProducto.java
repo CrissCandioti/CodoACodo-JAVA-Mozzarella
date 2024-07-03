@@ -4,7 +4,6 @@
  */
 package Servlets;
 
-import Entidades.Cliente;
 import Entidades.Producto;
 import Persistence.ProductoDAO;
 import com.fasterxml.jackson.databind.ObjectMapper;

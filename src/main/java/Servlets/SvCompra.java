@@ -8,7 +8,9 @@ import Entidades.Compra;
 import Persistence.CompraDAO;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -32,13 +34,14 @@ public class SvCompra extends HttpServlet {
     }
 
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String pathInfo = request.getPathInfo();
         try {
             if (pathInfo == null || pathInfo.equals("/")) {
-                List<Compra> listaCompras = compraDAO.listaCompras();
-                String json = objectMapper.writeValueAsString(listaCompras);
+                List<Compra> listaCompra = compraDAO.listaCompras();
+                Map<String, Object> responseMap = new HashMap<>();
+                responseMap.put("cliente", listaCompra);
+                String json = objectMapper.writeValueAsString(responseMap);
                 response.setContentType("application/json");
                 response.getWriter().write(json);
             } else {
@@ -54,7 +57,7 @@ public class SvCompra extends HttpServlet {
                 }
             }
         } catch (Exception e) {
-            response.sendError(HttpServletResponse.SC_NOT_FOUND);
+            throw new ServletException(e);
         }
     }
 
@@ -65,6 +68,34 @@ public class SvCompra extends HttpServlet {
         compraDAO.persistirEntidad(compra);
         response.setStatus(HttpServletResponse.SC_CREATED);
         response.setContentType("application/json");
+    }
+
+    @Override
+    protected void doPut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        try {
+            Compra compra = objectMapper.readValue(request.getReader(), Compra.class);
+            compraDAO.actualizarEntidad(compra);
+            response.setStatus(HttpServletResponse.SC_NO_CONTENT);
+        } catch (Exception e) {
+            throw new ServletException(e);
+        }
+    }
+
+    @Override
+    protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String pathInfo = request.getPathInfo();
+        try {
+            if (pathInfo != null && pathInfo.split("/").length > 1) {
+                int id = Integer.parseInt(pathInfo.split("/")[1]);
+                Compra compra = compraDAO.buscarCompraId(id);
+                compraDAO.borrarEntidad(compra);
+                response.setStatus(HttpServletResponse.SC_NO_CONTENT);
+            } else {
+                response.sendError(HttpServletResponse.SC_BAD_REQUEST);
+            }
+        } catch (Exception e) {
+            throw new ServletException(e);
+        }
     }
 
     @Override

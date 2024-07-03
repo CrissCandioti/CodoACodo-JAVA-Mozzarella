@@ -71,13 +71,21 @@ public class SvCliente extends HttpServlet {
     }
 
     @Override
-    protected void doPut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPut(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
         try {
             Cliente cliente = objectMapper.readValue(request.getReader(), Cliente.class);
+            Cliente clienteExistente = clienteDAO.buscarClienteId(cliente.getId());
+            if (clienteExistente == null) {
+                response.sendError(HttpServletResponse.SC_NOT_FOUND, "Cliente no encontrado.");
+                return;
+            }
             clienteDAO.actualizarEntidad(cliente);
             response.setStatus(HttpServletResponse.SC_NO_CONTENT);
         } catch (Exception e) {
-            throw new ServletException(e);
+            // Manejo de errores con información específica
+            e.printStackTrace();
+            throw new ServletException("Error al actualizar el cliente: " + e.getMessage(), e);
         }
     }
 

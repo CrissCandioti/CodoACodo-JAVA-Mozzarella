@@ -1,256 +1,222 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pizzeria</title>
-    <!--Instalacion Bootstrap-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
-    <!--Instalacion Bootstrap-->
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Pizzeria</title>
+        <!--Instalacion Bootstrap-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+        <!--Instalacion Bootstrap-->
 
-    <!--Instalacion CSS-->
-    <link rel="stylesheet" href="./static/css/index.css" />
-    <!--Instalacion CSS-->
+        <!--Instalacion CSS-->
+        <link rel="stylesheet" href="./static/css/index.css" />
+        <!--Instalacion CSS-->
 
-    <!--Instalacion CSS AOS-->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-    <!--Instalacion CSS AOS-->
+        <!--Instalacion CSS AOS-->
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+        <!--Instalacion CSS AOS-->
 
-    <!--Instalacion favicon-->
-    <link rel="Icon" href="./static/img/favicon.ico" type="image/x-ico" />
-    <!--Instalacion favicon-->
+        <!--Instalacion favicon-->
+        <link rel="Icon" href="./static/img/favicon.ico" type="image/x-ico" />
+        <!--Instalacion favicon-->
 
-    <!--Instalacion Google Font-->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap" rel="stylesheet" />
-    <!--Instalacion Google Font-->
+        <!--Instalacion Google Font-->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap" rel="stylesheet" />
+        <!--Instalacion Google Font-->
 
-    <!--Instalacion Icon Bootstrap-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
-    <!--Instalacion Icon Bootstrap-->
-  </head>
-  <body>
-    <header>
-      <!--NavBar-->
-      <nav class="navbar navbar-expand-lg fixed-top">
-        <div class="container-fluid">
-          <a class="navbar-brand me-auto" href="#">Mozzarella</a>
-          <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-            <div class="offcanvas-header">
-              <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Mozzarella</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-            </div>
-            <div class="offcanvas-body">
-              <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
-                <li class="nav-item">
-                  <a class="nav-link mx-lg-2 active" aria-current="page" href="./index.html">Inicio</a>
-                </li>
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Comida </a>
-                  <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="./templates/pizzas.html">Pizzas</a></li>
-                  </ul>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link mx-lg-2" href="./templates/contacto.html">Contacto</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link mx-lg-2" href="./templates/carritoCompra.html"><i class="bi bi-cart-check"></i></a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <a href="./templates/iniciarSesion.html" class="login-button me-1">Iniciar Sesion</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-        </div>
-      </nav>
-      <!--NavBar-->
-    </header>
-
-    <!--Main-->
-    <div class="container mt-custom min-vh-100">
-      <!--Titulo Promocional-->
-      <div class="row">
-        <h1 class="text-light mt-5">Promociones del dia</h1>
-      </div>
-      <!--Titulo Promocional-->
-      <!--Carousel de promociones-->
-      <div class="row">
-        <img src="./static/img/Promo.jpg" class="img-fluid" style="border-radius: 30px;" data-aos="zoom-out">
-      </div>
-      <!--Carousel de promociones-->
-      <!--Titulo Novedades-->
-      <div class="row">
-        <h1 class="text-light mt-5">Novedades</h1>
-      </div>
-      <!--Titulo Novedades-->
-      <!--Novedades-->
-      <div class="row">
-        <div class="col-sm-12 col-md-6 col-lg-4" data-aos="fade-right">
-          <div class="card" style="width: 18rem">
-            <img src="./static/img/Home-IMG1.jpg" class="card-img-top" alt="Novedades" />
-            <div class="card-body">
-              <p class="card-text">Proba nuestra nueva Pizza Barbacoa</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-12 col-md-6 col-lg-4" data-aos="fade-down">
-          <div class="card" style="width: 18rem">
-            <img src="./static/img/Home-IMG2.jpg" class="card-img-top" alt="Novedades" />
-            <div class="card-body">
-              <p class="card-text">¿Conoces todos nuestros sabores?</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-12 col-md-6 col-lg-4" data-aos="fade-left">
-          <div class="card" style="width: 18rem">
-            <img src="./static/img/Home-IMG3.jpg" class="card-img-top" alt="Novedades" />
-            <div class="card-body">
-              <p class="card-text">Hace tu pedido y disfruta de la mejor gastronomia</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!--Novedades-->
-      <!--Titulo Catalogo Pizza-->
-      <div class="row">
-        <h1 class="text-light mt-5">Conoce nuestras pizzas</h1>
-      </div>
-      <!--Titulo Catalogo Pizza-->
-      <!--Card Responsive de pizza-->
-      <div class="row">
-        <div class="col-sm-12 col-md-6 col-lg-4" data-aos="fade-right">
-          <div class="card" style="width: 18rem; height: 450px">
-            <img src="./static/img/Pizza-Card Responsive.png" class="card-img-top" alt="Imagen Pizza" />
-            <div class="card-body">
-              <h5 class="card-title text-center">Pizza Cuatro Quesos</h5>
-              <ul>
-                <li>Ingredientes: Salsa de tomate, mozzarella, queso azul, queso de cabra, parmesano.</li>
-                <li>Descripción: Una explosión de quesos diversos en cada bocado, perfecta para los amantes del queso.</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-12 col-md-6 col-lg-4" data-aos="fade-down">
-          <div class="card" style="width: 18rem; height: 450px">
-            <img src="./static/img/Pizza-Card Responsive.png" class="card-img-top" alt="Imagen Pizza" />
-            <div class="card-body">
-              <h5 class="card-title text-center">Pizza Vegetariana</h5>
-              <ul>
-                <li>Ingredientes: Salsa de tomate, mozzarella, champiñones, pimientos, cebolla, aceitunas.</li>
-                <li>Descripción: Una opción repleta de vegetales frescos y sabrosos para los que prefieren una opción sin carne.</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-12 col-md-6 col-lg-4" data-aos="fade-left">
-          <div class="card" style="width: 18rem; height: 450px">
-            <img src="./static/img/Pizza-Card Responsive.png" class="card-img-top" alt="Imagen Pizza" />
-            <div class="card-body">
-              <h5 class="card-title text-center">Pizza Napolitana</h5>
-              <ul>
-                <li>Ingredientes: Salsa de tomate, mozzarella fresca, anchoas, aceitunas, alcaparras.</li>
-                <li>Descripción: Una pizza con sabores intensos y típicos del sur de Italia.</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!--Card Responsive de pizza-->
-      <!--Button ver mas-->
-      <div class="row">
-        <div class="d-flex justify-content-end" data-aos="zoom-in">
-          <a href="./templates/pizzas.html" class="btn">Ver mas</a>
-        </div>
-      </div>
-      <!--Titulo Comentario-->
-      <div class="row">
-        <h1 class="text-light mt-3">Comentarios de nuestro clientes</h1>
-      </div>
-      <!--Titulo Comentario-->
-      <!--Carousel Comentario-->
-      <div class="row">
-        <div class="col" data-aos="zoom-in">
-          <div id="carouselExample" class="carousel slide">
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <div class="card" style="height: 200px">
-                  <div class="card-header">Quote</div>
-                  <div class="card-body">
-                    <blockquote class="blockquote mb-0">
-                      <p>A well-known quote, contained in a blockquote element.</p>
-                      <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
-                    </blockquote>
-                  </div>
+        <!--Instalacion Icon Bootstrap-->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+        <!--Instalacion Icon Bootstrap-->
+    </head>
+    <body>
+        <header>
+            <!--NavBar-->
+            <nav class="navbar navbar-expand-lg fixed-top">
+                <div class="container-fluid">
+                    <a class="navbar-brand me-auto" href="#">Mozzarella</a>
+                    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                        <div class="offcanvas-header">
+                            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Mozzarella</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                        </div>
+                        <div class="offcanvas-body">
+                            <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+                                <li class="nav-item">
+                                    <a class="nav-link mx-lg-2 active" aria-current="page" href="./index.html">Inicio</a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Comida </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="./templates/pizzas.html">Pizzas</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link mx-lg-2" href="./templates/contacto.html">Contacto</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link mx-lg-2" href="./templates/carritoCompra.html"><i class="bi bi-cart-check"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <a href="./templates/iniciarSesion.html" class="login-button me-1">Iniciar Sesion</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
                 </div>
-              </div>
-              <div class="carousel-item">
-                <div class="card" style="height: 200px">
-                  <div class="card-header">Quote</div>
-                  <div class="card-body">
-                    <blockquote class="blockquote mb-0">
-                      <p>A well-known quote, contained in a blockquote element.</p>
-                      <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
-                    </blockquote>
-                  </div>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <div class="card" style="height: 200px">
-                  <div class="card-header">Quote</div>
-                  <div class="card-body">
-                    <blockquote class="blockquote mb-0">
-                      <p>A well-known quote, contained in a blockquote element.</p>
-                      <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
-                    </blockquote>
-                  </div>
-                </div>
-              </div>
+            </nav>
+            <!--NavBar-->
+        </header>
+
+        <!--Main-->
+        <div class="container mt-custom min-vh-100">
+            <!--Titulo Promocional-->
+            <div class="row">
+                <h1 class="text-light mt-5">Promociones del dia</h1>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
-          </div>
+            <!--Titulo Promocional-->
+            <!--Carousel de promociones-->
+            <div class="row">
+                <img src="./static/img/Promo.jpg" class="img-fluid" style="border-radius: 30px;" data-aos="zoom-out">
+            </div>
+            <!--Carousel de promociones-->
+            <!--Titulo Novedades-->
+            <div class="row">
+                <h1 class="text-light mt-5">Novedades</h1>
+            </div>
+            <!--Titulo Novedades-->
+            <!--Novedades-->
+            <div class="row">
+                <div class="col-sm-12 col-md-6 col-lg-4" data-aos="fade-right">
+                    <div class="card" style="width: 18rem">
+                        <img src="./static/img/Home-IMG1.jpg" class="card-img-top" alt="Novedades" />
+                        <div class="card-body">
+                            <p class="card-text">Proba nuestra nueva Pizza Barbacoa</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-4" data-aos="fade-down">
+                    <div class="card" style="width: 18rem">
+                        <img src="./static/img/Home-IMG2.jpg" class="card-img-top" alt="Novedades" />
+                        <div class="card-body">
+                            <p class="card-text">¿Conoces todos nuestros sabores?</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-4" data-aos="fade-left">
+                    <div class="card" style="width: 18rem">
+                        <img src="./static/img/Home-IMG3.jpg" class="card-img-top" alt="Novedades" />
+                        <div class="card-body">
+                            <p class="card-text">Hace tu pedido y disfruta de la mejor gastronomia</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Novedades-->
+            <!--Titulo Catalogo Pizza-->
+            <div class="row">
+                <h1 class="text-light mt-5">Conoce nuestras pizzas</h1>
+            </div>
+            <!--Titulo Catalogo Pizza-->
+            <!--Card Responsive de pizza-->
+            <div id="pizza-container" class="row">
+                <!-- Aquí se inyectarán las tarjetas de pizza mediante JavaScript -->
+            </div>
+            <!--Card Responsive de pizza-->
+            <!--Button ver mas-->
+            <div class="row">
+                <div class="d-flex justify-content-end" data-aos="zoom-in">
+                    <a href="./templates/pizzas.html" class="btn">Ver mas</a>
+                </div>
+            </div>
+            <!--Titulo Comentario-->
+            <div class="row">
+                <h1 class="text-light mt-3">Comentarios de nuestro clientes</h1>
+            </div>
+            <!--Titulo Comentario-->
+            <!--Carousel Comentario-->
+            <div class="row">
+                <div class="col" data-aos="zoom-in">
+                    <div id="carouselExample" class="carousel slide">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="card" style="height: 200px">
+                                    <div class="card-header">Quote</div>
+                                    <div class="card-body">
+                                        <blockquote class="blockquote mb-0">
+                                            <p>A well-known quote, contained in a blockquote element.</p>
+                                            <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
+                                        </blockquote>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="card" style="height: 200px">
+                                    <div class="card-header">Quote</div>
+                                    <div class="card-body">
+                                        <blockquote class="blockquote mb-0">
+                                            <p>A well-known quote, contained in a blockquote element.</p>
+                                            <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
+                                        </blockquote>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="card" style="height: 200px">
+                                    <div class="card-header">Quote</div>
+                                    <div class="card-body">
+                                        <blockquote class="blockquote mb-0">
+                                            <p>A well-known quote, contained in a blockquote element.</p>
+                                            <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
+                                        </blockquote>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!--Carousel Comentario-->
         </div>
-      </div>
-      <!--Carousel Comentario-->
-    </div>
-    <!--Main-->
+        <!--Main-->
 
-    <!--footer-->
-    <footer class="footer mt-auto">
-      <div class="container-fluid bg-body-tertiary mt-5 text-center">
-        <div class="row">
-          <div class="col-12 mt-3">
-            <i class="bi bi-instagram"></i>
-            <i class="bi bi-twitter"></i>
-            <i class="bi bi-whatsapp"></i>
-            <i class="bi bi-facebook"></i>
-            <i class="bi bi-linkedin"></i>
-            <p>Derechos Reservados @2024</p>
-          </div>
-        </div>
-      </div>
-    </footer>
-    <!--footer-->
+        <!--footer-->
+        <footer class="footer mt-auto">
+            <div class="container-fluid bg-body-tertiary mt-5 text-center">
+                <div class="row">
+                    <div class="col-12 mt-3">
+                        <i class="bi bi-instagram"></i>
+                        <i class="bi bi-twitter"></i>
+                        <i class="bi bi-whatsapp"></i>
+                        <i class="bi bi-facebook"></i>
+                        <i class="bi bi-linkedin"></i>
+                        <p>Derechos Reservados @2024</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!--footer-->
 
-    <!--Instalacion Scrip Bootstrap-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <!--Instalacion Scrip Bootstrap-->
+        <!--Instalacion Scrip Bootstrap-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+        <!--Instalacion Scrip Bootstrap-->
 
-    <!--AOS page efect-->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-      AOS.init();
-    </script>
-    <!--AOS page efect-->
-  </body>
+        <!--AOS page efect-->
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script>
+            AOS.init();
+        </script>
+        <!--AOS page efect-->
+        <script src="./static/js/index.js"></script>
+    </body>
 </html>

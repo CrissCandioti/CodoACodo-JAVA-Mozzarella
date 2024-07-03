@@ -21,7 +21,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author criss
  */
-@WebServlet(name = "SvCliente", urlPatterns = {"/SvCliente"})
+@WebServlet(name = "SvCliente", urlPatterns = {"/SvCliente/*"})
 public class SvCliente extends HttpServlet {
 
     private ClienteDAO clienteDAO;

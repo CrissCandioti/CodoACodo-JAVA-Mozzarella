@@ -21,7 +21,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author criss
  */
-@WebServlet(name = "SvProducto", urlPatterns = {"/SvProducto"})
+@WebServlet(name = "SvProducto", urlPatterns = {"/SvProducto/*"})
 public class SvProducto extends HttpServlet {
 
     private ProductoDAO productoDAO;

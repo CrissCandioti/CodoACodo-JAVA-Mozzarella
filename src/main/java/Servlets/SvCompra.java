@@ -71,13 +71,21 @@ public class SvCompra extends HttpServlet {
     }
 
     @Override
-    protected void doPut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPut(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
         try {
             Compra compra = objectMapper.readValue(request.getReader(), Compra.class);
+            Compra compraExistente = compraDAO.buscarCompraId(compra.getId());
+            if (compraExistente == null) {
+                response.sendError(HttpServletResponse.SC_NOT_FOUND, "Compra no encontrado.");
+                return;
+            }
             compraDAO.actualizarEntidad(compra);
             response.setStatus(HttpServletResponse.SC_NO_CONTENT);
         } catch (Exception e) {
-            throw new ServletException(e);
+            // Manejo de errores con información específica
+            e.printStackTrace();
+            throw new ServletException("Error al actualizar la compra: " + e.getMessage(), e);
         }
     }
 

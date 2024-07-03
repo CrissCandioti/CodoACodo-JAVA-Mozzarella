@@ -4,11 +4,14 @@
  */
 package Servlets;
 
+import Entidades.Cliente;
 import Entidades.Producto;
 import Persistence.ProductoDAO;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -32,13 +35,14 @@ public class SvProducto extends HttpServlet {
     }
 
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String pathInfo = request.getPathInfo();
         try {
             if (pathInfo == null || pathInfo.equals("/")) {
                 List<Producto> listaProductos = productoDAO.listaProductos();
-                String json = objectMapper.writeValueAsString(listaProductos);
+                Map<String, Object> responseMap = new HashMap<>();
+                responseMap.put("Producto", listaProductos);
+                String json = objectMapper.writeValueAsString(responseMap);
                 response.setContentType("application/json");
                 response.getWriter().write(json);
             } else {
@@ -46,15 +50,15 @@ public class SvProducto extends HttpServlet {
                 int id = Integer.parseInt(pathParts[1]);
                 Producto producto = productoDAO.BuscarProductoId(id);
                 if (producto != null) {
-                    String productoJson = objectMapper.writeValueAsString(producto);
+                    String json = objectMapper.writeValueAsString(producto);
                     response.setContentType("application/json");
-                    response.getWriter().write(productoJson);
+                    response.getWriter().write(json);
                 } else {
                     response.sendError(HttpServletResponse.SC_NOT_FOUND);
                 }
             }
         } catch (Exception e) {
-            response.sendError(HttpServletResponse.SC_NOT_FOUND);
+            throw new ServletException(e);
         }
     }
 
@@ -68,9 +72,36 @@ public class SvProducto extends HttpServlet {
     }
 
     @Override
+    protected void doPut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        try {
+            Producto producto = objectMapper.readValue(request.getReader(), Producto.class);
+            productoDAO.actualizarEntidad(producto);
+            response.setStatus(HttpServletResponse.SC_NO_CONTENT);
+        } catch (Exception e) {
+            throw new ServletException(e);
+        }
+    }
+
+    @Override
+    protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String pathInfo = request.getPathInfo();
+        try {
+            if (pathInfo != null && pathInfo.split("/").length > 1) {
+                int id = Integer.parseInt(pathInfo.split("/")[1]);
+                Producto producto = productoDAO.BuscarProductoId(id);
+                productoDAO.borrarEntidad(producto);
+                response.setStatus(HttpServletResponse.SC_NO_CONTENT);
+            } else {
+                response.sendError(HttpServletResponse.SC_BAD_REQUEST);
+            }
+        } catch (Exception e) {
+            throw new ServletException(e);
+        }
+    }
+
+    @Override
     public String getServletInfo() {
         return "Servlet para manejar productos.";
     }
-  
 
 }

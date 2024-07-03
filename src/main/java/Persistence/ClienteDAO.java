@@ -43,9 +43,21 @@ public final class ClienteDAO extends DAO<Cliente> {
     public List<Cliente> listaClientes() {
         try {
             conectar();
-            return em.createQuery("SELECT c FROM Cliente c" , Cliente.class).getResultList();
+            return em.createQuery("SELECT c FROM Cliente c", Cliente.class).getResultList();
         } catch (Exception e) {
             System.out.println("Error al traer la lista de clientes de la base de datos en la clase ClienteDAO");
+        } finally {
+            desconectar();
+        }
+        return null;
+    }
+
+    public Cliente buscarCLientePorEmail(String correoElectronico) {
+        try {
+            conectar();
+            return (Cliente) em.createQuery("SELECT c FROM Cliente c WHERE c.correoElectronico = :correoElectronico").setParameter("correoElectronico", correoElectronico).getSingleResult();
+        } catch (Exception e) {
+            System.out.println("Error en el metodo buscarClientePorEmail en la clase ClienteDAO");
         } finally {
             desconectar();
         }

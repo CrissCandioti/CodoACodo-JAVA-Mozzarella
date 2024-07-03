@@ -26,25 +26,29 @@ public class Cliente {
     @Column(unique = true)
     private String correoElectronico;
     private String contrasena;
+    @Column(length = 1000, unique = true)
+    private String comengarios;
 
     public Cliente() {
     }
 
-    public Cliente(String nombre, String apellido, String nombreUsuario, String correoElectronico, String contrasena) {
+    public Cliente(String nombre, String apellido, String nombreUsuario, String correoElectronico, String contrasena, String comengarios) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.nombreUsuario = nombreUsuario;
         this.correoElectronico = correoElectronico;
         this.contrasena = contrasena;
+        this.comengarios = comengarios;
     }
 
-    public Cliente(int id, String nombre, String apellido, String nombreUsuario, String correoElectronico, String contrasena) {
+    public Cliente(int id, String nombre, String apellido, String nombreUsuario, String correoElectronico, String contrasena, String comengarios) {
         this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
         this.nombreUsuario = nombreUsuario;
         this.correoElectronico = correoElectronico;
         this.contrasena = contrasena;
+        this.comengarios = comengarios;
     }
 
     public int getId() {
@@ -95,9 +99,17 @@ public class Cliente {
         this.contrasena = contrasena;
     }
 
+    public String getComengarios() {
+        return comengarios;
+    }
+
+    public void setComengarios(String comengarios) {
+        this.comengarios = comengarios;
+    }
+
     @Override
     public String toString() {
-        return "Cliente{" + "id=" + id + ", nombre=" + nombre + ", apellido=" + apellido + ", nombreUsuario=" + nombreUsuario + ", correoElectronico=" + correoElectronico + ", contrasena=" + contrasena + '}';
+        return "Cliente{" + "id=" + id + ", nombre=" + nombre + ", apellido=" + apellido + ", nombreUsuario=" + nombreUsuario + ", correoElectronico=" + correoElectronico + ", contrasena=" + contrasena + ", comengarios=" + comengarios + '}';
     }
 
 }

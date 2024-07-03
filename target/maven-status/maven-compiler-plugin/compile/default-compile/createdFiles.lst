@@ -1,6 +1,7 @@
 Persistence\DAO.class
 com\mycompany\codoacodopizzamozzarella\NewMain.class
 Entidades\Producto.class
+Entidades\Cliente_.class
 Entidades\Cliente.class
 Services\CompraServices.class
 Entidades\Compra.class
@@ -11,4 +12,6 @@ Services\ClienteServices.class
 Services\ProductoServices.class
 Persistence\ProductoDAO.class
 Persistence\CompraDAO.class
+Entidades\Compra_.class
+Entidades\Producto_.class
 Servlets\SvProducto.class

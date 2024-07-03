@@ -23,28 +23,33 @@ public class Producto {
     @Column(length = 2048)
     private String imagen;
     private String nombre;
+    @Column(length = 100)
     private String ingredientes;
+    @Column(length = 250)
     private String descripcion;
     private double precio;
+    private String categoria;
 
     public Producto() {
     }
 
-    public Producto(String imagen, String nombre, String ingredientes, String descripcion, double precio) {
+    public Producto(String imagen, String nombre, String ingredientes, String descripcion, double precio, String categoria) {
         this.imagen = imagen;
         this.nombre = nombre;
         this.ingredientes = ingredientes;
         this.descripcion = descripcion;
         this.precio = precio;
+        this.categoria = categoria;
     }
 
-    public Producto(int id, String imagen, String nombre, String ingredientes, String descripcion, double precio) {
+    public Producto(int id, String imagen, String nombre, String ingredientes, String descripcion, double precio, String categoria) {
         this.id = id;
         this.imagen = imagen;
         this.nombre = nombre;
         this.ingredientes = ingredientes;
         this.descripcion = descripcion;
         this.precio = precio;
+        this.categoria = categoria;
     }
 
     public int getId() {
@@ -95,9 +100,17 @@ public class Producto {
         this.precio = precio;
     }
 
+    public String getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(String categoria) {
+        this.categoria = categoria;
+    }
+
     @Override
     public String toString() {
-        return "Producto{" + "id=" + id + ", imagen=" + imagen + ", nombre=" + nombre + ", ingredientes=" + ingredientes + ", descripcion=" + descripcion + ", precio=" + precio + '}';
+        return "Producto{" + "id=" + id + ", imagen=" + imagen + ", nombre=" + nombre + ", ingredientes=" + ingredientes + ", descripcion=" + descripcion + ", precio=" + precio + ", categoria=" + categoria + '}';
     }
 
 }

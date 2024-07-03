@@ -18,10 +18,10 @@ function crearTarjetaPizza(pizza, index) {
             <h5 class="card-title text-center">${pizza.nombre}</h5>
             <ul>
               <li>Ingredientes: ${pizza.ingredientes}</li>
-              <li>Descripción: ${pizza.descripción}</li>
+              <li>Descripción: ${pizza.descripcion}</li>
             </ul>
             <div class="d-flex justify-content-around mt-3">
-              <small class="mt-2 ps-3">Costo: $${pizza.price}</small>
+              <small class="mt-2 ps-3">Costo: $${pizza.precio.toFixed(2)}</small>
               <button type="button" class="btn add-to-cart" data-id="${index}"><i class="bi bi-cart2"></i></button>
             </div>
           </div>
@@ -34,7 +34,7 @@ function crearTarjetaPizza(pizza, index) {
 // Función para cargar los datos de la API
 function cargarPizzas() {
   // Llamamos a nuestro fetch
-  fetch("https://rickandmortyapi.com/api/character", opcion)
+  fetch("http://localhost:8080/CodoACodoPizzaMozzarella/SvProducto/", opcion)
     .then(function (response) {
       // Transformamos el String (Json) en objeto que Js reconoce
       return response.json();
@@ -43,15 +43,15 @@ function cargarPizzas() {
       // Manipular objetos del DOM
       const pizzaContainer = document.getElementById("pizza-container");
 
-      // Convertimos los personajes en datos de pizzas simuladas
-      const pizzas = data.results.map(function (character, index) {
+      // Convertimos los productos en datos de pizzas simuladas
+      const pizzas = data.Producto.map(function (producto, index) {
         return {
-          id: index,
-          nombre: character.name,
-          imagen: character.image,
-          ingredientes: "Ingredientes",
-          descripción: "Descripción",
-          price: Math.floor(Math.random() * 1000) + 4000, // Precio simulado entre $4000 y $5000
+          id: producto.id,
+          nombre: producto.nombre,
+          imagen: producto.imagen,
+          ingredientes: producto.ingredientes,
+          descripcion: producto.descripcion,
+          precio: producto.precio, // Utilizamos el campo "precio" del JSON
         };
       });
 

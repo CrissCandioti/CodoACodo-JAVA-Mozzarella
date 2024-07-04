@@ -64,4 +64,17 @@ public final class ClienteDAO extends DAO<Cliente> {
         return null;
     }
 
+    public Cliente buscarClientePorEmailYCorreoLogin(String correoElectronico, String contrasena) {
+        try {
+            conectar();
+            return (Cliente) em.createQuery("SELECT c FROM Cliente c WHERE c.correoElectronico =:correoElectronico AND c.contrasena =:contrasena").setParameter("correoElectronico", correoElectronico).setParameter("contrasena", contrasena).getSingleResult();
+
+        } catch (Exception e) {
+            System.out.println("Error en el metodo buscarClientePorEmailYCorreoLogin de la clase CLIENTEDAO");
+        } finally {
+            desconectar();
+        }
+        return null;
+    }
+
 }

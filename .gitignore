@@ -1,4 +1,45 @@
+# Ignorar archivos de compilación
+target/
+*.class
+*.jar
+*.war
+*.ear
 
-*.class
-*.class
-*.class
+# Ignorar archivos de configuración del IDE
+*.idea/
+*.project
+*.classpath
+*.settings/
+*.sublime-workspace
+*.sublime-project
+
+# Ignorar archivos de registro y temporales
+*.log
+*.tmp
+*.swp
+
+# Ignorar archivos de caché
+.cache/
+*.cache
+
+# Ignorar archivos generados por el sistema operativo
+.DS_Store
+Thumbs.db
+
+# Ignorar archivos de dependencias (dejar estos archivos fuera del seguimiento)
+*.jar
+*.war
+*.ear
+
+# Ignorar directorios de construcción
+*.gradle/
+build/
+
+# No ignores directorios de recursos
+!src/main/resources/
+!src/main/webapp/
+
+# Asegúrate de no ignorar archivos de configuración importantes
+!pom.xml
+!build.gradle
+!settings.gradle

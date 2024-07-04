@@ -62,12 +62,24 @@ public class SvCliente extends HttpServlet {
     }
 
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        Cliente cliente = objectMapper.readValue(request.getReader(), Cliente.class);
-        clienteDAO.persistirEntidad(cliente);
-        response.setStatus(HttpServletResponse.SC_CREATED);
-        response.setContentType("application/json");
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        try {
+            // Leer el JSON del cuerpo de la solicitud
+            Cliente loginRequest = objectMapper.readValue(request.getReader(), Cliente.class);
+            Cliente cliente = clienteDAO.buscarClientePorEmailYCorreoLogin(loginRequest.getCorreoElectronico(), loginRequest.getContrasena());
+
+            if (cliente != null) {
+                // Si el cliente existe y las credenciales son correctas
+                response.setStatus(HttpServletResponse.SC_OK);
+                response.setContentType("application/json");
+                response.getWriter().write(objectMapper.writeValueAsString(cliente));
+            } else {
+                // Si el cliente no existe o las credenciales son incorrectas
+                response.sendError(HttpServletResponse.SC_UNAUTHORIZED, "Credenciales incorrectas");
+            }
+        } catch (Exception e) {
+            response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "Error en el servidor");
+        }
     }
 
     @Override

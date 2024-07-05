@@ -33,3 +33,4 @@ replay_pid*
 !build.gradle
 !settings.gradle
 target/generated-sources/annotations/Entidades/Cliente_.java
+*.war

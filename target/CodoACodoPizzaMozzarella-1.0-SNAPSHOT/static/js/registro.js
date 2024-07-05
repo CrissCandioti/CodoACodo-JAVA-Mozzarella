@@ -24,16 +24,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     comengarios: null
                 })
             });
-
-            if (response.ok) {
-                const result = await response.json();
-                console.log('Resultado:', result);
-                alert('Registro exitoso');
-            } else {
-                const errorText = await response.text();
-                console.error('Error en el servidor:', errorText);
-                alert('Registro fallido');
-            }
         } catch (error) {
             console.error('Error de red o de fetch:', error);
             alert('Error en el registro');

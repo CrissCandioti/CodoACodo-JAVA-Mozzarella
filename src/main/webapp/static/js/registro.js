@@ -1,7 +1,5 @@
-
 document.addEventListener('DOMContentLoaded', () => {
     const registerForm = document.getElementById('registerForm');
-
     registerForm.addEventListener('submit', async (event) => {
         event.preventDefault();
 
@@ -23,17 +21,21 @@ document.addEventListener('DOMContentLoaded', () => {
                     nombreUsuario: nombreDeUsuario,
                     correoElectronico: correoElectronico,
                     contrasena: contrasena,
+                    comengarios: null
                 })
             });
 
             if (response.ok) {
                 const result = await response.json();
+                console.log('Resultado:', result);
                 alert('Registro exitoso');
             } else {
+                const errorText = await response.text();
+                console.error('Error en el servidor:', errorText);
                 alert('Registro fallido');
             }
         } catch (error) {
-            console.error('Error en el registro del usuario');
+            console.error('Error de red o de fetch:', error);
             alert('Error en el registro');
         }
     });

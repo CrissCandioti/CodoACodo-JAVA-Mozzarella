@@ -24,6 +24,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     comengarios: null
                 })
             });
+            alert('Se registro correctamente');
+            window.location.href = '../../index.html';
         } catch (error) {
             console.error('Error de red o de fetch:', error);
             alert('Error en el registro');

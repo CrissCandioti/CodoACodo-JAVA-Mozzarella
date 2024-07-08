@@ -33,7 +33,7 @@ public final class CompraDAO extends DAO<Compra> {
             conectar();
             return em.find(Compra.class, id);
         } catch (Exception e) {
-            System.out.println("Error en el metodo buscarCompraID de la clase CompraDAO: " + e);
+            System.out.println(e.fillInStackTrace());
         } finally {
             desconectar();
         }
@@ -45,7 +45,7 @@ public final class CompraDAO extends DAO<Compra> {
             conectar();
             return em.createQuery("Select c From Compra c", Compra.class).getResultList();
         } catch (Exception e) {
-            System.out.println("Error en el metodo listaCompras en la clase CompraDAO");
+            System.out.println(e.fillInStackTrace());
         } finally {
             desconectar();
         }

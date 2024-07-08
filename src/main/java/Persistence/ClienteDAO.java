@@ -33,7 +33,7 @@ public final class ClienteDAO extends DAO<Cliente> {
             conectar();
             return em.find(Cliente.class, id);
         } catch (Exception e) {
-            System.out.println("Error en el metodo buscarClienteId de la clase ClienteDAO");
+            System.out.println(e.fillInStackTrace());
         } finally {
             desconectar();
         }
@@ -45,7 +45,7 @@ public final class ClienteDAO extends DAO<Cliente> {
             conectar();
             return em.createQuery("SELECT c FROM Cliente c", Cliente.class).getResultList();
         } catch (Exception e) {
-            System.out.println("Error al traer la lista de clientes de la base de datos en la clase ClienteDAO");
+            System.out.println(e.fillInStackTrace());
         } finally {
             desconectar();
         }
@@ -57,7 +57,7 @@ public final class ClienteDAO extends DAO<Cliente> {
             conectar();
             return (Cliente) em.createQuery("SELECT c FROM Cliente c WHERE c.correoElectronico = :correoElectronico").setParameter("correoElectronico", correoElectronico).getSingleResult();
         } catch (Exception e) {
-            System.out.println("Error en el metodo buscarClientePorEmail en la clase ClienteDAO");
+            System.out.println(e.fillInStackTrace());
         } finally {
             desconectar();
         }
@@ -68,9 +68,8 @@ public final class ClienteDAO extends DAO<Cliente> {
         try {
             conectar();
             return (Cliente) em.createQuery("SELECT c FROM Cliente c WHERE c.correoElectronico =:correoElectronico AND c.contrasena =:contrasena").setParameter("correoElectronico", correoElectronico).setParameter("contrasena", contrasena).getSingleResult();
-
         } catch (Exception e) {
-            System.out.println("Error en el metodo buscarClientePorEmailYCorreoLogin de la clase CLIENTEDAO");
+            System.out.println(e.fillInStackTrace());
         } finally {
             desconectar();
         }

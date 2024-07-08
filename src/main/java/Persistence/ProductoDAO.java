@@ -33,7 +33,7 @@ public final class ProductoDAO extends DAO<Producto> {
             conectar();
             return em.find(Producto.class, id);
         } catch (Exception e) {
-            System.out.println("Error en el metodo BuscarProductoID en la clase ProductoDAO");
+            System.out.println(e.fillInStackTrace());
         } finally {
             desconectar();
         }
@@ -45,7 +45,7 @@ public final class ProductoDAO extends DAO<Producto> {
             conectar();
             return em.createQuery("Select p From Producto p", Producto.class).getResultList();
         } catch (Exception e) {
-            System.out.println("Error al traer la lista de productos en la clase ProductoDAO");
+            System.out.println(e.fillInStackTrace());
         } finally {
             desconectar();
         }

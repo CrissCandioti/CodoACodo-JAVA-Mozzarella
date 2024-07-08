@@ -87,7 +87,8 @@ public class SvCliente extends HttpServlet {
             throws ServletException, IOException {
         try {
             Cliente cliente = objectMapper.readValue(request.getReader(), Cliente.class);
-            Cliente clienteExistente = clienteDAO.buscarClienteId(cliente.getId());
+//            Cliente clienteExistente = clienteDAO.buscarClienteId(cliente.getId());
+            Cliente clienteExistente = clienteDAO.buscarCLientePorEmail(cliente.getCorreoElectronico());
             if (clienteExistente == null) {
                 response.sendError(HttpServletResponse.SC_NOT_FOUND, "Cliente no encontrado.");
                 return;

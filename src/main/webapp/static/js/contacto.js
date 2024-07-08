@@ -15,6 +15,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({
+                    nombre: nombre,
+                    apellido: apellido,
                     correoElectronico: correoElectronico,
                     comengarios: comentario
                 })
@@ -25,26 +27,5 @@ document.addEventListener('DOMContentLoaded', () => {
             alert('Error en el registro', error);
         }
     });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-})
+});
 

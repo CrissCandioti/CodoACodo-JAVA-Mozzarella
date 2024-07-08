@@ -25,7 +25,6 @@ hs_err_pid*
 replay_pid*
 
 # No ignores directorios de recursos
-!src/main/resources/
 !src/main/webapp/
 
 # Asegúrate de no ignorar archivos de configuración importantes

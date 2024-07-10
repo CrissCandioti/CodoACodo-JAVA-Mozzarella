@@ -1,5 +1,3 @@
-// login.js
-
 document.addEventListener('DOMContentLoaded', () => {
     const loginForm = document.getElementById('loginForm');
 
@@ -19,6 +17,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 },
                 body: JSON.stringify({correoElectronico: email, contrasena: password})
             });
+            localStorage.setItem('usuario', email);
+            console.log(localStorage.getItem('usuario'));
             alert('Se inicio correctamente la sesion :)');
             window.location.href = '../index.html';
         } catch (error) {

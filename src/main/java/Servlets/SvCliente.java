@@ -40,7 +40,7 @@ public class SvCliente extends HttpServlet {
             if (pathInfo == null || pathInfo.equals("/")) {
                 List<Cliente> listaClientes = clienteDAO.listaClientes();
                 Map<String, Object> responseMap = new HashMap<>();
-                responseMap.put("cliente", listaClientes);
+                responseMap.put("clientes", listaClientes);
                 String json = objectMapper.writeValueAsString(responseMap);
                 response.setContentType("application/json");
                 response.getWriter().write(json);

@@ -83,7 +83,6 @@ public class SvProducto extends HttpServlet {
             productoDAO.actualizarEntidad(producto);
             response.setStatus(HttpServletResponse.SC_NO_CONTENT);
         } catch (Exception e) {
-            // Manejo de errores con información específica
             e.printStackTrace();
             throw new ServletException("Error al actualizar el producto: " + e.getMessage(), e);
         }

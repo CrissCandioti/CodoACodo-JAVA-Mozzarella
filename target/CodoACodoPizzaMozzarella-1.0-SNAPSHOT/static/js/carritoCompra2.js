@@ -11,11 +11,14 @@ async function guardarCarritoEnBaseDeDatos() {
             body: JSON.stringify({usuario: usuario, productos: carrito})
         });
         alert('¡La compra se guardó correctamente!');
-        localStorage.removeItem("carrito"); 
-        window.location.href = '../index.html'; 
+        localStorage.removeItem("carrito");
+        window.location.href = '../index.html';
     } catch (error) {
         console.error('Error:', error);
         alert('Error al guardar la compra');
     }
 }
-guardarCarritoEnBaseDeDatos();
+
+document.getElementById('guardarCarritoBtn').addEventListener('click', function () {
+    guardarCarritoEnBaseDeDatos();
+});

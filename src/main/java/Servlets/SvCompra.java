@@ -4,10 +4,15 @@
  */
 package Servlets;
 
+import Entidades.Cliente;
 import Entidades.Compra;
+import Entidades.Producto;
+import Persistence.ClienteDAO;
 import Persistence.CompraDAO;
+import Persistence.ProductoDAO;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -26,6 +31,8 @@ public class SvCompra extends HttpServlet {
 
     private CompraDAO compraDAO;
     private ObjectMapper objectMapper;
+    private ProductoDAO productoDAO;
+    private ClienteDAO clienteDAO;
 
     @Override
     public void init() throws ServletException {
@@ -64,10 +71,23 @@ public class SvCompra extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        Compra compra = objectMapper.readValue(request.getReader(), Compra.class);
-        compraDAO.persistirEntidad(compra);
-        response.setStatus(HttpServletResponse.SC_CREATED);
-        response.setContentType("application/json");
+        try {
+            Compra compraFront = objectMapper.readValue(request.getReader(), Compra.class);
+            List<Producto> listaProductosBackend = new ArrayList<>();
+            List<Producto> listaProductosFront = compraFront.getProductos();
+            for (Producto producto : listaProductosFront) {
+                listaProductosBackend.add(productoDAO.BuscarProductoId(producto.getId()));
+            }
+            Cliente cliente = clienteDAO.buscarCLientePorEmail(compraFront.getCliente().getCorreoElectronico());
+            Compra compraBaseDatos = new Compra(cliente, listaProductosFront, null);
+            compraDAO.persistirEntidad(compraBaseDatos);
+            response.setStatus(HttpServletResponse.SC_CREATED);
+            response.setContentType("application/json");
+        } catch (Exception e) {
+            // Manejo de errores con información específica
+            e.printStackTrace();
+            throw new ServletException("Error al actualizar la compra: " + e.getMessage(), e);
+        }
     }
 
     @Override

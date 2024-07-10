@@ -37,6 +37,8 @@ public class SvCompra extends HttpServlet {
     @Override
     public void init() throws ServletException {
         compraDAO = new CompraDAO();
+        clienteDAO = new ClienteDAO();
+        productoDAO = new ProductoDAO();
         objectMapper = new ObjectMapper();
     }
 
@@ -73,12 +75,15 @@ public class SvCompra extends HttpServlet {
             throws ServletException, IOException {
         try {
             Compra compraFront = objectMapper.readValue(request.getReader(), Compra.class);
+            Cliente cliente = clienteDAO.buscarCLientePorEmail(compraFront.getCliente().getCorreoElectronico());
             List<Producto> listaProductosBackend = new ArrayList<>();
             List<Producto> listaProductosFront = compraFront.getProductos();
             for (Producto producto : listaProductosFront) {
-                listaProductosBackend.add(productoDAO.BuscarProductoId(producto.getId()));
+                Producto productoBD = productoDAO.BuscarProductoId(producto.getId());
+                if (productoBD != null) {
+                    listaProductosBackend.add(productoBD);
+                }
             }
-            Cliente cliente = clienteDAO.buscarCLientePorEmail(compraFront.getCliente().getCorreoElectronico());
             Compra compraBaseDatos = new Compra(cliente, listaProductosFront, null);
             compraDAO.persistirEntidad(compraBaseDatos);
             response.setStatus(HttpServletResponse.SC_CREATED);

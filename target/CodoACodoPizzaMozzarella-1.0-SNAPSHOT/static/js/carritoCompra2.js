@@ -8,7 +8,7 @@ async function guardarCarritoEnBaseDeDatos() {
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({usuario: usuario, productos: carrito})
+            body: JSON.stringify({usuario: usuario, productos: carrito, direccion: null})
         });
         alert('¡La compra se guardó correctamente!');
         localStorage.removeItem("carrito");
